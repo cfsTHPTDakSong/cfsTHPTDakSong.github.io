@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cfs THPT Đắk Song</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+    * {
+        font-family: 'Dancing Script', cursive;
+        font-weight: bolder;
+    }
+    
+    .box {
+        position: absolute;
+        top: 40%;
+        left: 35%
+    }
+    
+    .backgound {
+        padding-top: 5em;
+        padding-left: 1em;
+        background: rgb(238, 174, 202);
+        background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+        height: 100vh;
+    }
+    
+    .content {
+        display: flex;
+        color: white;
+        font-size: 3em;
+        font-weight: bolder;
+        margin: auto;
+        justify-content: center;
+    }
+    
+    .totalbtn {
+        display: flex;
+        margin-top: 2em;
+        justify-content: center;
+    }
+    
+    .move {
+        transform: translate(10%, 200%);
+        transition: 0.01s;
+    }
+    
+    .u {
+        margin-top: 40%;
+    }
+    
+    .created {
+        font-family: Arial, Helvetica, sans-serif;
+        color: aliceblue;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <div class="container-fuild backgound">
+        <div class="row">
+            <div class="col">
+                <h1 id="text" class="content ">
+                    Đồng ý làm người yêu mình nhé 💖!!
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col totalbtn">
+                <button id="love" class="btn btn-success btn-lg" onclick="clickOkie()">Đồng ý 💖 </button>
+                <button id="no-love" class=" btn btn-danger btn-lg" onclick="lovefunction()">Không 💔</button>
+            </div>
+        </div>
+        <div class="row u">
+            <div class="col ">
+                <span class="created">
+                    Created by THPT Đăk Song Confessions
+                </span>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var love = document.getElementById("love");
+        var no_love = document.getElementById("no-love");
+        var text = document.getElementById('text');
+        var srcC = "https://itexpress.vn/js/new.year.min.js";
+        var count = 1;
+        var c = document.getElementById('congratulate');
+
+
+        function clickOkie() {
+            // txt.innerHTML('Mình biết cậu sẽ đồng ý mà, Mãi yêu 💖 ');
+            document.getElementById("text").innerHTML = `
+            "Mình biết cậu sẽ đồng ý mà, Mãi bên nhau bạn nhớ.... 💖"
+           
+            `;
+
+
+        }
+
+
+
+        function lovefunction() {
+            no_love.classList.toggle('move')
+            count++;
+            switch (count) {
+                case 2:
+                    document.getElementById("text").innerHTML = "Đừng từ chối mà, đồng ý đi mà ";
+                    break;
+                case 3:
+                    document.getElementById("text").innerHTML = "Suy nghĩ lại đi mà!";
+                    break;
+                case 4:
+                    document.getElementById("text").innerHTML = "Đừng chọn \"Không\" nữa mà";
+                    break;
+                case 5:
+                    document.getElementById("text").innerHTML = "Tỉnh táo lại đi, đừng lựa chọn sai lầm như thế chú";
+                    break;
+                case 6:
+                    document.getElementById("text").innerHTML = "Cho suy nghĩ lại lần cuối đấy";
+                    break;
+                case 7:
+                    document.getElementById("text").innerHTML = "Cho suy nghĩ lại lần CUỐI CUỐI đấy";
+                    break;
+                case 8:
+                    document.getElementById("text").innerHTML = "Xấu như cậu, tr0' nó yêu, có mình tỏ tình là tốt lắm rồi, nên ĐỒNG Ý ĐI";
+
+                    break;
+                case 9:
+                    document.getElementById("text").innerHTML = "Cậu muốn ế suất đời sao";
+                    count = 0;
+                    break;
+                default:
+                    document.getElementById("text").innerHTML = "Hết cách luông!!";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
